@@ -1,0 +1,34 @@
+{% load i18n %}
+
+{% if app_list %}
+<div class="group-collapsible">
+   {% for app in dashboard_app_list %}
+   <div class="grp-module" id="app_{{ app.name|lower }}">
+       <h2>{% trans app.name %}</h2>
+       {% for model in app.models %}
+           <div class="grp-row">
+           {% if model.perms.change or model.perms.custom %}
+               <a href="{{ model.admin_url }}"><strong>{{ model.name }}</strong></a>
+           {% else %}
+               {{ model.name }}
+           {% endif %}
+
+           <ul class="grp-actions">
+               {% if model.perms.add %}
+                   <li class="grp-add-link">
+                       <a href="{{ model.add_url }}">{% trans 'Add' %}</a>
+                   </li>
+               {% endif %}
+
+               {% if model.perms.change %}
+                   <li class="grp-change-link">
+                       <a href="{{ model.admin_url }}">{% trans 'Change' %}</a>
+                   </li>
+               {% endif %}
+           </ul>
+           </div>
+       {% endfor %}
+   </div>
+   {% endfor %}
+</div>
+{% endif %}
