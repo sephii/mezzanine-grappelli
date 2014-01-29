@@ -5,3 +5,44 @@
 .breadcrumbs {
     padding: 5px 20px;
 }
+
+/* Avoid hiding the breadcrumbs in popups (eg. filebrowser) */
+.grp-popup .breadcrumbs {
+    display: block;
+    padding: 0;
+}
+
+/*  Recent Actions ................................................... */
+
+ul.actionlist li {
+    margin: 5px 0 0; padding: 2px 10px 0 20px;
+    line-height: 12px;
+}
+
+ul.actionlist li a {
+    margin-left: -20px; padding-left: 19px;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+}
+
+ul.actionlist li.addlink a:link, ul.actionlist li.addlink a:visited {
+    background-image:url('../../../grappelli/images/icons-small/add-link.png');
+}
+
+ul.actionlist li.addlink a:hover, ul.actionlist li.addlink a:active {
+    background-image:url('../../../grappelli/images/icons-small/add-link_hover.png');
+}
+
+ul.actionlist li.changelink a:link, ul.actionlist li.changelink a:visited {
+    background-image:url('../../../grappelli/images/icons-small/change-link.png');
+}
+
+ul.actionlist li.changelink a:hover, ul.actionlist li.changelink a:active {
+    background-image:url('../../../grappelli/images/icons-small/change-link_hover.png');
+}
+
+ul.actionlist li.deletelink {
+    color: #666;
+    text-decoration: line-through;
+    background-image: url('../../../grappelli/images/icons-small/delete-link.png');
+}
