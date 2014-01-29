@@ -70,3 +70,5 @@ window.__language_code = '{{ LANGUAGE_CODE }}';
     {{ block.super }}
     <li><a href="{% url "home" %}">{% trans "View site" %}</a></li>
 {% endblock %}
+
+{% block breadcrumbs-class %}breadcrumbs{% endblock %}

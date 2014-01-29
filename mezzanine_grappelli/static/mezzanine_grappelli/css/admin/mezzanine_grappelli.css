@@ -1,3 +1,7 @@
 #quick-blog .grp-row.submit {
     text-align: right;
 }
+
+.breadcrumbs {
+    padding: 5px 20px;
+}
