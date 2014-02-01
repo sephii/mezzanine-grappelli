@@ -50,6 +50,20 @@ window.__language_code = '{{ LANGUAGE_CODE }}';
 <link rel="stylesheet" type="text/css" href="{% static "mezzanine/css/admin/rtl.css" %}" />
 {% endblock %}
 
+{% block javascripts %}{{ block.super }}
+<script type="text/javascript">
+// Make Mezzanine collapse-open and collapse-closed compatible with Grappelli's
+// grp-collapse. This is mostly used to avoid having to redefine Blog and Pages
+// apps admin to change the collapse classes to Grappelli's
+(function($) {
+    $(document).ready(function() {
+        $('.collapse-closed').removeClass('collapse-closed').addClass('grp-collapse').addClass('grp-closed');
+        $('.collapse-open').removeClass('collapse-open').addClass('grp-collapse').addClass('grp-open');
+    });
+}(grp.jQuery));
+</script>
+{% endblock %}
+
 {% block footer %}
 {{ block.super }}
 {% if form.this_is_the_login_form %}
@@ -60,7 +74,6 @@ window.__language_code = '{{ LANGUAGE_CODE }}';
         <script src="{% static "mezzanine/js/admin/navigation.js" %}"></script>
         {% endif %}
         <script src="{% static "mezzanine/js/admin/ajax_csrf.js" %}"></script>
-        <script src="{% static "mezzanine/js/admin/collapse_backport.js" %}"></script>
         {% admin_dropdown_menu %}
     {% endif %}
 {% endif %}
