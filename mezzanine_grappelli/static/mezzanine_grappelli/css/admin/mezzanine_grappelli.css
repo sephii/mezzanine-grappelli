@@ -4,12 +4,17 @@
 
 .breadcrumbs {
     padding: 5px 20px;
+    background-color: #eee !important;
 }
 
 /* Avoid hiding the breadcrumbs in popups (eg. filebrowser) */
 .grp-popup .breadcrumbs {
     display: block;
     padding: 0;
+}
+
+.dropdown-menu li ul {
+    background-color: #eee;
 }
 
 /*  Recent Actions ................................................... */
