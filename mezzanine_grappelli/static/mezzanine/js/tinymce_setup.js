@@ -83,6 +83,8 @@ if (typeof tinyMCE != 'undefined') {
 
         // Grappelli Settings
         grappelli_adv_hidden: false,
-        grappelli_show_documentstructure: 'on'
+        grappelli_show_documentstructure: 'on',
+
+        content_css : tinyMCE.baseURI.toAbsolute("../../../../mezzanine_grappelli/css/admin/tiny_mce.css")
     });
 }

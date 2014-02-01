@@ -1,0 +1,8 @@
+body#tinymce {
+    background-color: white;
+    padding: 10px !important;
+}
+
+body#tinymce, body#tinymce td, body#tinymce pre, body#tinymce ol, body#tinymce ul, body#tinymce li {
+    font-size: 12px;
+}
