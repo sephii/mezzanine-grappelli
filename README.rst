@@ -20,8 +20,9 @@ Grappelli and Filebrowser as well)::
 
     pip install mezzanine-grappelli
 
-In your `settings.py` file, add mezzanine_grappelli, grappelli and filebrowser
-to your `INSTALLED_APPS` (make sure they appear before any mezzanine app)::
+In your ``settings.py`` file, add mezzanine_grappelli, grappelli and
+filebrowser to your ``INSTALLED_APPS`` (make sure they appear before any
+mezzanine app)::
 
     INSTALLED_APPS = (
         "mezzanine_grappelli",
@@ -30,13 +31,13 @@ to your `INSTALLED_APPS` (make sure they appear before any mezzanine app)::
         ...
     )
 
-Still in your `settings.py` file, adapt the value of `PACKAGE_NAME_FILEBROWSER`
-and `PACKAGE_NAME_GRAPPELLI`::
+Still in your ``settings.py`` file, adapt the value of
+``PACKAGE_NAME_FILEBROWSER`` and ``PACKAGE_NAME_GRAPPELLI``::
 
     PACKAGE_NAME_FILEBROWSER = "filebrowser"
     PACKAGE_NAME_GRAPPELLI = "grappelli"
 
-Add Grappelli URLs to your `urls.py` file::
+Add Grappelli URLs to your ``urls.py`` file::
 
     urlpatterns += patterns("",
         ...
@@ -55,21 +56,21 @@ be aware of.
 TabularDynamicInlineAdmin doesn't work
 --------------------------------------
 
-Use classic Django `TabularInline` instead.
+Use classic Django ``TabularInline`` instead.
 
 Filebrowser error: "Error finding Upload-Folder (site.storage.location + site.directory). Maybe it does not exist?"
 -------------------------------------------------------------------------------------------------------------------
 
 That's because Filebrowser doesn't automatically create the uploads directory,
-so just create the `MEDIA_ROOT + 'uploads/'` directory
+so just create the ``MEDIA_ROOT + 'uploads/'`` directory
 
 FileField doesn't work
 ----------------------
 
-When using `FileField` fields you need to put the `format` in lowercase (ie.
-"image" instead of "Image") otherwise you'll get a Filebrowser exception.
+When using ``FileField`` fields you need to put the ``format`` in lowercase
+(ie.  "image" instead of "Image") otherwise you'll get a Filebrowser exception.
 That's especially true for already defined Mezzanine models (such as the
-`BlogPost` model). To fix the issue for already-defined Mezzanine models, you
+``BlogPost`` model). To fix the issue for already-defined Mezzanine models, you
 can add the following to your settings file::
 
     FILEBROWSER_SELECT_FORMATS = {
@@ -83,7 +84,7 @@ can add the following to your settings file::
 TODO
 ====
 
-* Make `TabularDynamicInlineAdmin` work or at least fall back to a usable
+* Make ``TabularDynamicInlineAdmin`` work or at least fall back to a usable
   solution
 
 Bugs, contributing
