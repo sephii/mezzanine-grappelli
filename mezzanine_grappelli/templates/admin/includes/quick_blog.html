@@ -20,12 +20,10 @@ grp.jQuery(function($) {
         {% csrf_token %}
         <div id="quick-blog">
             {% for field in form %}
-                {% if not field.is_hidden %}
-                    <div class="grp-row">
-                        <label>{{ field.label }}</label>
-                        {{ field }}
-                    </div>
-                {% endif %}
+                <div class="grp-row {% if field.is_hidden %}hidden{% endif %}">
+                    <label>{{ field.label }}</label>
+                    {{ field }}
+                </div>
             {% endfor %}
             <div class="grp-row submit">
                 <input type="submit" class="default" value="{% trans "Save Draft" %}" />

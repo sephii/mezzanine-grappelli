@@ -26,6 +26,10 @@ header#grp-header #grp-navigation ul#grp-user-tools li.language-switcher {
     padding: 5px;
 }
 
+.hidden {
+    display: none;
+}
+
 /*  Recent Actions ................................................... */
 
 ul.actionlist li {
