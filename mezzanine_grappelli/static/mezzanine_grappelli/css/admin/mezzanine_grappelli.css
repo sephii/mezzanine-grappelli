@@ -5,6 +5,7 @@
 .breadcrumbs {
     padding: 5px 20px;
     background-color: #eee !important;
+    width: auto;
 }
 
 /* Avoid hiding the breadcrumbs in popups (eg. filebrowser) */
@@ -15,6 +16,14 @@
 
 .dropdown-menu li ul {
     background-color: #eee;
+}
+
+#grp-page-tools {
+    padding: 5px 20px;
+}
+
+header#grp-header #grp-navigation ul#grp-user-tools li.language-switcher {
+    padding: 5px;
 }
 
 /*  Recent Actions ................................................... */

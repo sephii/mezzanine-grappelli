@@ -85,3 +85,32 @@ window.__language_code = '{{ LANGUAGE_CODE }}';
 {% endblock %}
 
 {% block breadcrumbs-class %}breadcrumbs{% endblock %}
+
+{% block userlinks %}
+{% if LANGUAGES|length > 1 %}
+<li class="language-switcher">
+{% get_language_info_list for LANGUAGES as languages %}
+<form>
+    <select id="id_language" onchange="window.location.href=this.value;">
+        {% for lang in languages %}
+        <option{% if LANGUAGE_CODE == lang.code %} selected="selected"{% endif %} value="{% translate_url lang.code %}">{{ lang.name_local }}</option>
+        {% endfor %}
+    </select>
+</form>
+{% endif %}
+{% if dropdown_menu_sites and dropdown_menu_sites|length > 1 %}
+<form action="{% url "set_site" %}">
+<input type="hidden" name="next" value="{{ request.path }}">
+<select name="site_id" onchange="this.form.submit();">
+{% for site in dropdown_menu_sites %}
+<option value="{{ site.id }}"
+    {% if site.id == dropdown_menu_selected_site_id %} selected{% endif %}
+    >{{ site }}</option>
+{% endfor %}
+</select>
+</form>
+</li>
+{% endif %}
+{{ block.super }}
+<li><a href="{% url "home" %}">{% trans "View site" %}</a></li>
+{% endblock %}
