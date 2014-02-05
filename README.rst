@@ -24,22 +24,22 @@ Grappelli and Filebrowser as well)::
 
     pip install mezzanine-grappelli
 
-In your ``settings.py`` file, add mezzanine_grappelli, grappelli and
+In your ``settings.py`` file, adapt the value of
+``PACKAGE_NAME_FILEBROWSER`` and ``PACKAGE_NAME_GRAPPELLI``::
+
+    PACKAGE_NAME_FILEBROWSER = "filebrowser"
+    PACKAGE_NAME_GRAPPELLI = "grappelli"
+
+Still in your ``settings.py`` file, add mezzanine_grappelli, grappelli and
 filebrowser to your ``INSTALLED_APPS`` (make sure they appear before any
 mezzanine app)::
 
     INSTALLED_APPS = (
         "mezzanine_grappelli",
-        "grappelli",
-        "filebrowser",
+        PACKAGE_NAME_GRAPPELLI,
+        PACKAGE_NAME_FILEBROWSER,
         ...
     )
-
-Still in your ``settings.py`` file, adapt the value of
-``PACKAGE_NAME_FILEBROWSER`` and ``PACKAGE_NAME_GRAPPELLI``::
-
-    PACKAGE_NAME_FILEBROWSER = "filebrowser"
-    PACKAGE_NAME_GRAPPELLI = "grappelli"
 
 Add Grappelli URLs to your ``urls.py`` file::
 
