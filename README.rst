@@ -12,6 +12,10 @@ Grappelli version? This application does exactly that: it allows you to use the
 full power of the latest vanilla versions of both Grappelli and Filebrowser in
 your Mezzanine projects.
 
+
+.. image:: https://github.com/sephii/mezzanine-grappelli/raw/master/docs/images/login.png
+.. image:: https://github.com/sephii/mezzanine-grappelli/raw/master/docs/images/filebrowser.png
+
 Installation
 ============
 
