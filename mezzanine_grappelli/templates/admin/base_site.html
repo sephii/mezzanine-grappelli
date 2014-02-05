@@ -79,11 +79,6 @@ window.__language_code = '{{ LANGUAGE_CODE }}';
 {% endif %}
 {% endblock %}
 
-{% block userlinks %}
-    {{ block.super }}
-    <li><a href="{% url "home" %}">{% trans "View site" %}</a></li>
-{% endblock %}
-
 {% block breadcrumbs-class %}breadcrumbs{% endblock %}
 
 {% block userlinks %}
